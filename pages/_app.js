@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import { DashLayout } from "../components/layout";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import "../styles/globals.css";
+
+function App({ Component, pageProps, router }) {
+  if (router.pathname.startsWith("/panel")) {
+    return (
+      <DashLayout>
+        <Component {...pageProps} />
+      </DashLayout>
+    );
+  }
+
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default App;

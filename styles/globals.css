@@ -1,16 +1,55 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General */
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Montserrat", sans-serif;
+  color: #111827;
+}
+h1 {
+  @apply text-3xl mt-5;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h2 {
+  @apply text-2xl;
 }
 
-* {
-  box-sizing: border-box;
+.input-form {
+  @apply border rounded py-2 px-5 uppercase text-sm;
+}
+
+.btn {
+  @apply py-2 px-5 text-sm text-center cursor-pointer transform transition duration-500 hover:scale-105 focus:outline-none px-4 rounded;
+}
+
+.btn:active,
+.logout:active {
+  transform: scale(0.9);
+}
+.blue-gradient {
+  background: linear-gradient(90deg, #2c48ac 0%, #5075f7 100%);
+}
+
+.ellipse-text {
+  text-overflow: ellipsis; /* IE, Safari (WebKit) */
+  overflow: hidden; /* don't show excess chars */
+  white-space: nowrap; /* force single line */
+  width: 100px; /*This property playing a major role just showing the first 2 letter*/
+}
+
+.content {
+  @apply px-3 sm:px-10;
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68d391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #68d391;
 }
